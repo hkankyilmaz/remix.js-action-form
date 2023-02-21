@@ -9,12 +9,12 @@ const API = "https://api.convertkit.com/v3";
 function Form() {
   console.log(API_KEY);
   return (
-    <form action="POST">
+    <form action="post">
       <h2>Subscribe!</h2>
       <p>Don't miss any of the action!</p>
       <fieldset>
         <input type="email" name="email" placeholder="Enter e-mail..." />
-        <button>Send</button>
+        <button type="submit">Send</button>
       </fieldset>
     </form>
   );
