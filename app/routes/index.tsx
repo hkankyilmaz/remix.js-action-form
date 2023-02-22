@@ -1,10 +1,5 @@
-import {
-  LinksFunction,
-  MetaFunction,
-  ActionArgs,
-  json,
-  redirect,
-} from "@remix-run/node";
+import type { LinksFunction, ActionArgs } from "@remix-run/node";
+import { useActionData } from "@remix-run/react";
 
 import Form from "../../components/form";
 
@@ -25,11 +20,11 @@ export const action = async ({ request }: ActionArgs) => {
   console.log(email);
 
   return { ok: true };
-
-  redirect("/");
 };
 
 export default function Index() {
+  const data = useActionData<typeof action>();
+  console.log(data);
   return (
     <div className="container">
       <Form />
